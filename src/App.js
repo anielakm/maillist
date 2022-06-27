@@ -1,22 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { data } from "assets/data";
+import MailList from "components/organisms/MailList/MailList";
+import Heading from "components/atoms/Heading/Heading";
+import TotalChecked from "components/molecules/TotalChecked/TotalChecked";
+import MailListProvider from 'contexts/MailListContext'
 
 function App() {
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MailListProvider>
+          <Heading />
+          <MailList list={data} />
+          <TotalChecked />
+        </MailListProvider>
       </header>
     </div>
   );
